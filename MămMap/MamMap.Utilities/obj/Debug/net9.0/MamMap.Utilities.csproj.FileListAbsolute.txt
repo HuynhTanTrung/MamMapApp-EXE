@@ -1,0 +1,4 @@
+C:\Users\Nghe\source\repos\MămMap\MămMap\MamMap.Utilities\obj\Debug\net9.0\MamMap.Utilities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nghe\source\repos\MămMap\MămMap\MamMap.Utilities\obj\Debug\net9.0\MamMap.Utilities.AssemblyInfoInputs.cache
+C:\Users\Nghe\source\repos\MămMap\MămMap\MamMap.Utilities\obj\Debug\net9.0\MamMap.Utilities.AssemblyInfo.cs
+C:\Users\Nghe\source\repos\MămMap\MămMap\MamMap.Utilities\obj\Debug\net9.0\MamMap.Utilities.csproj.CoreCompileInputs.cache

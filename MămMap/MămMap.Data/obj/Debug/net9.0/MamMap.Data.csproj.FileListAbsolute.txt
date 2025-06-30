@@ -1,0 +1,14 @@
+C:\Users\Nghe\source\repos\MămMap\MămMap\MămMap.Data\bin\Debug\net9.0\MamMap.Data.deps.json
+C:\Users\Nghe\source\repos\MămMap\MămMap\MămMap.Data\bin\Debug\net9.0\MamMap.Data.runtimeconfig.json
+C:\Users\Nghe\source\repos\MămMap\MămMap\MămMap.Data\bin\Debug\net9.0\MamMap.Data.dll
+C:\Users\Nghe\source\repos\MămMap\MămMap\MămMap.Data\bin\Debug\net9.0\MamMap.Data.pdb
+C:\Users\Nghe\source\repos\MămMap\MămMap\MămMap.Data\obj\Debug\net9.0\MamMap.Data.csproj.AssemblyReference.cache
+C:\Users\Nghe\source\repos\MămMap\MămMap\MămMap.Data\obj\Debug\net9.0\MamMap.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nghe\source\repos\MămMap\MămMap\MămMap.Data\obj\Debug\net9.0\MamMap.Data.AssemblyInfoInputs.cache
+C:\Users\Nghe\source\repos\MămMap\MămMap\MămMap.Data\obj\Debug\net9.0\MamMap.Data.AssemblyInfo.cs
+C:\Users\Nghe\source\repos\MămMap\MămMap\MămMap.Data\obj\Debug\net9.0\MamMap.Data.csproj.CoreCompileInputs.cache
+C:\Users\Nghe\source\repos\MămMap\MămMap\MămMap.Data\obj\Debug\net9.0\MamMap.Data.dll
+C:\Users\Nghe\source\repos\MămMap\MămMap\MămMap.Data\obj\Debug\net9.0\refint\MamMap.Data.dll
+C:\Users\Nghe\source\repos\MămMap\MămMap\MămMap.Data\obj\Debug\net9.0\MamMap.Data.pdb
+C:\Users\Nghe\source\repos\MămMap\MămMap\MămMap.Data\obj\Debug\net9.0\MamMap.Data.genruntimeconfig.cache
+C:\Users\Nghe\source\repos\MămMap\MămMap\MămMap.Data\obj\Debug\net9.0\ref\MamMap.Data.dll

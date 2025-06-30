@@ -1,0 +1,1306 @@
+[
+  {
+    "ContainingType": "MamMapApp.Controllers.BusinessModelsController",
+    "Method": "CreateBusinessModel",
+    "RelativePath": "api/BusinessModels/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MamMap.ViewModels.System.Other.CreateBusinessModelDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.BusinessModelsController",
+    "Method": "Delete",
+    "RelativePath": "api/BusinessModels/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.BusinessModelsController",
+    "Method": "GetAll",
+    "RelativePath": "api/BusinessModels/getAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.BusinessModelsController",
+    "Method": "GetById",
+    "RelativePath": "api/BusinessModels/getById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.BusinessModelsController",
+    "Method": "SearchBusinessModel",
+    "RelativePath": "api/BusinessModels/search",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MamMap.ViewModels.System.Other.SearchBMRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.BusinessModelsController",
+    "Method": "UpdateBusinessModel",
+    "RelativePath": "api/BusinessModels/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MamMap.ViewModels.System.Other.updateBusinessModelDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.DashboardController",
+    "Method": "GetMerchantPercentage",
+    "RelativePath": "api/dashboard/merchantPercentage",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.DashboardController",
+    "Method": "GetRevenueByDate",
+    "RelativePath": "api/dashboard/revenueByDate",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "from",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "to",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.DashboardController",
+    "Method": "GetRevenueByMonth",
+    "RelativePath": "api/dashboard/revenueByMonth",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "year",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.DashboardController",
+    "Method": "GetTotals",
+    "RelativePath": "api/dashboard/totals",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.DietController",
+    "Method": "CreateDiet",
+    "RelativePath": "api/Diet/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MamMap.ViewModels.System.Diet.CreateDietDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.DietController",
+    "Method": "DeleteDiet",
+    "RelativePath": "api/Diet/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.DietController",
+    "Method": "GetAllDiets",
+    "RelativePath": "api/Diet/getAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.DietController",
+    "Method": "GetDietById",
+    "RelativePath": "api/Diet/getById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.DietController",
+    "Method": "SearchDiet",
+    "RelativePath": "api/Diet/search",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MamMap.ViewModels.System.Diet.SearchDietRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.DietController",
+    "Method": "UpdateDiet",
+    "RelativePath": "api/Diet/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MamMap.ViewModels.System.Diet.UpdateDietDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.DishController",
+    "Method": "CreateDish",
+    "RelativePath": "api/Dish/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MamMap.ViewModels.System.Dish.CreateDishDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.DishController",
+    "Method": "GetAllDishes",
+    "RelativePath": "api/Dish/getAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.DishController",
+    "Method": "GetDishById",
+    "RelativePath": "api/Dish/getById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.DishController",
+    "Method": "GetDishesBySnackPlace",
+    "RelativePath": "api/Dish/getBySnackPlace",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "snackPlaceId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.DishController",
+    "Method": "SearchDishes",
+    "RelativePath": "api/Dish/search-dishes",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MamMap.ViewModels.System.Dish.SearchDishRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.DishController",
+    "Method": "UpdateDish",
+    "RelativePath": "api/Dish/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MamMap.ViewModels.System.Dish.UpdateDishDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.FoodTypeController",
+    "Method": "CreateFoodType",
+    "RelativePath": "api/FoodType/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MamMap.ViewModels.System.FoodType.CreateFoodTypeDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.FoodTypeController",
+    "Method": "Delete",
+    "RelativePath": "api/FoodType/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.FoodTypeController",
+    "Method": "GetAllFoodTypes",
+    "RelativePath": "api/FoodType/getAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.FoodTypeController",
+    "Method": "GetById",
+    "RelativePath": "api/FoodType/getById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.FoodTypeController",
+    "Method": "SearchFoodType",
+    "RelativePath": "api/FoodType/search",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MamMap.ViewModels.System.FoodType.SearchFoodTypeRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.FoodTypeController",
+    "Method": "UpdateDiet",
+    "RelativePath": "api/FoodType/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MamMap.ViewModels.System.FoodType.UpdateFoodTypeDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.GeminiController",
+    "Method": "AskBot",
+    "RelativePath": "api/Gemini/ask",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MamMap.ViewModels.System.Gemini.AskBotRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.MerchantController",
+    "Method": "CheckMySnackPlace",
+    "RelativePath": "api/merchants/checkCreatedSnackplace",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.MerchantController",
+    "Method": "ConfirmEmail",
+    "RelativePath": "api/merchants/confirm-email",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.MerchantController",
+    "Method": "CreateMerchant",
+    "RelativePath": "api/merchants/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MamMapApp.Models.CreateUserDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.MerchantController",
+    "Method": "Login",
+    "RelativePath": "api/merchants/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MamMap.ViewModels.System.User.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.PaymentController",
+    "Method": "CheckPaymentStatus",
+    "RelativePath": "api/Payment/checkStatus",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "paymentId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.PaymentController",
+    "Method": "CreatePayment",
+    "RelativePath": "api/Payment/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MamMap.ViewModels.System.Payment.CreatePaymentDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.PaymentController",
+    "Method": "GetUserPremiumPackages",
+    "RelativePath": "api/Payment/hasPackage",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.PaymentController",
+    "Method": "GetPaymentHistory",
+    "RelativePath": "api/Payment/paymentHistory",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.PaymentController",
+    "Method": "SePayWebhook",
+    "RelativePath": "api/Payment/sepay-webhook",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MamMap.ViewModels.System.Payment.SePayWebhookDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.PremiumPackageController",
+    "Method": "Create",
+    "RelativePath": "api/PremiumPackage/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MamMap.ViewModels.System.Package.CreatePremiumPackageDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.PremiumPackageController",
+    "Method": "Delete",
+    "RelativePath": "api/PremiumPackage/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.PremiumPackageController",
+    "Method": "GetAll",
+    "RelativePath": "api/PremiumPackage/getAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.PremiumPackageController",
+    "Method": "GetById",
+    "RelativePath": "api/PremiumPackage/getById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.PremiumPackageController",
+    "Method": "SearchPackage",
+    "RelativePath": "api/PremiumPackage/search",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MamMap.ViewModels.System.Package.SearchPackageRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.PremiumPackageController",
+    "Method": "UpdatePremiumPackage",
+    "RelativePath": "api/PremiumPackage/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "dto",
+        "Type": "MamMap.ViewModels.System.Package.UpdatePremiumPackageDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMap.BackendAPI.Controllers.ReplyController",
+    "Method": "CreateReply",
+    "RelativePath": "api/Reply/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MamMap.ViewModels.System.Reply.CreateReplyDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMap.BackendAPI.Controllers.ReplyController",
+    "Method": "DeleteReply",
+    "RelativePath": "api/Reply/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMap.BackendAPI.Controllers.ReplyController",
+    "Method": "GetReplyById",
+    "RelativePath": "api/Reply/getById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMap.BackendAPI.Controllers.ReplyController",
+    "Method": "GetRepliesByParentReplyId",
+    "RelativePath": "api/Reply/getByParentReplyId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "parentReplyId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMap.BackendAPI.Controllers.ReplyController",
+    "Method": "GetRepliesByReviewId",
+    "RelativePath": "api/Reply/getByReviewId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reviewId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.ReviewController",
+    "Method": "CreateReview",
+    "RelativePath": "api/reviews/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MamMap.ViewModels.System.Review.CreateReviewDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.ReviewController",
+    "Method": "DeleteReview",
+    "RelativePath": "api/reviews/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.ReviewController",
+    "Method": "GetAllComments",
+    "RelativePath": "api/reviews/getAllComments",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.ReviewController",
+    "Method": "GetAllReviews",
+    "RelativePath": "api/reviews/getAllReviewsAndReplies",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.ReviewController",
+    "Method": "GetAllReviewsBySnackPlace",
+    "RelativePath": "api/reviews/getAllReviewsAndRepliesBySnackPlaceId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "snackPlaceId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.ReviewController",
+    "Method": "GetAverageReviewRate",
+    "RelativePath": "api/reviews/getAverageRate",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "snackPlaceId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.ReviewController",
+    "Method": "GetReviewById",
+    "RelativePath": "api/reviews/getById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.ReviewController",
+    "Method": "GetReviewsBySnackPlaceId",
+    "RelativePath": "api/reviews/getBySnackPlaceId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "snackPlaceId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.ReviewController",
+    "Method": "Recommend",
+    "RelativePath": "api/reviews/recommend",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reviewId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.SnackPlacesController",
+    "Method": "LogClick",
+    "RelativePath": "api/SnackPlaces/click",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MamMap.ViewModels.System.SnackPlace.LogClickRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.SnackPlacesController",
+    "Method": "CreateSnackPlace",
+    "RelativePath": "api/SnackPlaces/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MamMap.ViewModels.System.SnackPlace.CreateSnackPlaceDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.SnackPlacesController",
+    "Method": "FilterSnackPlaces",
+    "RelativePath": "api/SnackPlaces/filter",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MamMap.ViewModels.System.SnackPlace.FilterSnackPlaceRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.SnackPlacesController",
+    "Method": "GetAllSnackPlaces",
+    "RelativePath": "api/SnackPlaces/getAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.SnackPlacesController",
+    "Method": "GetAllAttributes",
+    "RelativePath": "api/SnackPlaces/getAllAttributes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.SnackPlacesController",
+    "Method": "GetSnackPlaceById",
+    "RelativePath": "api/SnackPlaces/getById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.SnackPlacesController",
+    "Method": "GetClickStatistics",
+    "RelativePath": "api/SnackPlaces/getClick",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "startDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "endDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.SnackPlacesController",
+    "Method": "SearchSnackPlaces",
+    "RelativePath": "api/SnackPlaces/search-snackplaces",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MamMap.ViewModels.System.SnackPlace.SearchSnackPlaceRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.SnackPlacesController",
+    "Method": "GetSnackPlaceStats",
+    "RelativePath": "api/SnackPlaces/stats",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.SnackPlacesController",
+    "Method": "UpdateSnackPlace",
+    "RelativePath": "api/SnackPlaces/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MamMap.ViewModels.System.SnackPlace.UpdateSnackPlaceDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.TasteController",
+    "Method": "CreateTaste",
+    "RelativePath": "api/Taste/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MamMap.ViewModels.System.Taste.CreateTasteDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.TasteController",
+    "Method": "Delete",
+    "RelativePath": "api/Taste/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.TasteController",
+    "Method": "GetAllTastes",
+    "RelativePath": "api/Taste/getAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.TasteController",
+    "Method": "GetById",
+    "RelativePath": "api/Taste/getById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.TasteController",
+    "Method": "SearchTaste",
+    "RelativePath": "api/Taste/search",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MamMap.ViewModels.System.Taste.SearchTasteRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.TasteController",
+    "Method": "UpdateDiet",
+    "RelativePath": "api/Taste/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MamMap.ViewModels.System.Taste.updateTasteDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserCrudApp.Controllers.UserController",
+    "Method": "ChangePassword",
+    "RelativePath": "api/users/change-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MamMap.ViewModels.System.User.ChangePasswordRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserCrudApp.Controllers.UserController",
+    "Method": "ConfirmEmail",
+    "RelativePath": "api/users/confirm-email",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserCrudApp.Controllers.UserController",
+    "Method": "CreateUser",
+    "RelativePath": "api/users/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MamMapApp.Models.CreateUserDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserCrudApp.Controllers.UserController",
+    "Method": "ForgotPassword",
+    "RelativePath": "api/users/forgot-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MamMap.ViewModels.System.User.ForgotPasswordRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserCrudApp.Controllers.UserController",
+    "Method": "GetCurrentLogin",
+    "RelativePath": "api/users/get-current-login",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserCrudApp.Controllers.UserController",
+    "Method": "GetAllUsers",
+    "RelativePath": "api/users/getAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserCrudApp.Controllers.UserController",
+    "Method": "GetUserById",
+    "RelativePath": "api/users/getById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserCrudApp.Controllers.UserController",
+    "Method": "Login",
+    "RelativePath": "api/users/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MamMap.ViewModels.System.User.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserCrudApp.Controllers.UserController",
+    "Method": "RefreshToken",
+    "RelativePath": "api/users/refresh-token",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MamMap.ViewModels.System.User.RefreshTokenRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserCrudApp.Controllers.UserController",
+    "Method": "ResetPasswordWithOtp",
+    "RelativePath": "api/users/reset-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MamMap.ViewModels.System.User.ResetPasswordWithOtpRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserCrudApp.Controllers.UserController",
+    "Method": "SearchUser",
+    "RelativePath": "api/users/search",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MamMap.ViewModels.System.User.SearchUserRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserCrudApp.Controllers.UserController",
+    "Method": "UpdateUser",
+    "RelativePath": "api/users/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MamMapApp.Models.UpdateUserDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

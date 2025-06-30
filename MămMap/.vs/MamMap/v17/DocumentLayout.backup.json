@@ -1,0 +1,306 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMap\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AA5870A7-F07A-4D44-8FA9-F8AB4E6B070A}|..\\M\u0103mMapApp\\MamMapApp.csproj|c:\\users\\nghe\\source\\repos\\m\u0103mmap\\m\u0103mmapapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA5870A7-F07A-4D44-8FA9-F8AB4E6B070A}|..\\M\u0103mMapApp\\MamMapApp.csproj|c:\\users\\nghe\\source\\repos\\m\u0103mmap\\m\u0103mmapapp\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA5870A7-F07A-4D44-8FA9-F8AB4E6B070A}|..\\M\u0103mMapApp\\MamMapApp.csproj|c:\\users\\nghe\\source\\repos\\m\u0103mmap\\m\u0103mmapapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA5870A7-F07A-4D44-8FA9-F8AB4E6B070A}|..\\M\u0103mMapApp\\MamMapApp.csproj|c:\\users\\nghe\\source\\repos\\m\u0103mmap\\m\u0103mmapapp\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA5870A7-F07A-4D44-8FA9-F8AB4E6B070A}|..\\M\u0103mMapApp\\MamMapApp.csproj|c:\\users\\nghe\\source\\repos\\m\u0103mmap\\m\u0103mmapapp\\services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{216A74DD-1DCF-4388-A377-E9159817BECA}|M\u0103mMap.Data\\MamMap.Data.csproj|c:\\users\\nghe\\source\\repos\\m\u0103mmap\\m\u0103mmap\\m\u0103mmap.data\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{216A74DD-1DCF-4388-A377-E9159817BECA}|M\u0103mMap.Data\\MamMap.Data.csproj|solutionrelative:m\u0103mmap.data\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA5870A7-F07A-4D44-8FA9-F8AB4E6B070A}|..\\M\u0103mMapApp\\MamMapApp.csproj|c:\\users\\nghe\\source\\repos\\m\u0103mmap\\m\u0103mmapapp\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{216A74DD-1DCF-4388-A377-E9159817BECA}|M\u0103mMap.Data\\MamMap.Data.csproj|c:\\users\\nghe\\source\\repos\\m\u0103mmap\\m\u0103mmap\\m\u0103mmap.data\\ef\\mammapdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{216A74DD-1DCF-4388-A377-E9159817BECA}|M\u0103mMap.Data\\MamMap.Data.csproj|solutionrelative:m\u0103mmap.data\\ef\\mammapdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA5870A7-F07A-4D44-8FA9-F8AB4E6B070A}|..\\M\u0103mMapApp\\MamMapApp.csproj|c:\\users\\nghe\\source\\repos\\m\u0103mmap\\m\u0103mmapapp\\mammapapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{216A74DD-1DCF-4388-A377-E9159817BECA}|M\u0103mMap.Data\\MamMap.Data.csproj|c:\\users\\nghe\\source\\repos\\m\u0103mmap\\m\u0103mmap\\m\u0103mmap.data\\ef\\mammapdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{216A74DD-1DCF-4388-A377-E9159817BECA}|M\u0103mMap.Data\\MamMap.Data.csproj|solutionrelative:m\u0103mmap.data\\ef\\mammapdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{216A74DD-1DCF-4388-A377-E9159817BECA}|M\u0103mMap.Data\\MamMap.Data.csproj|c:\\users\\nghe\\source\\repos\\m\u0103mmap\\m\u0103mmap\\m\u0103mmap.data\\configurations\\userconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{216A74DD-1DCF-4388-A377-E9159817BECA}|M\u0103mMap.Data\\MamMap.Data.csproj|solutionrelative:m\u0103mmap.data\\configurations\\userconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{216A74DD-1DCF-4388-A377-E9159817BECA}|M\u0103mMap.Data\\MamMap.Data.csproj|c:\\users\\nghe\\source\\repos\\m\u0103mmap\\m\u0103mmap\\m\u0103mmap.data\\mammap.data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{216A74DD-1DCF-4388-A377-E9159817BECA}|M\u0103mMap.Data\\MamMap.Data.csproj|solutionrelative:m\u0103mmap.data\\mammap.data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{216A74DD-1DCF-4388-A377-E9159817BECA}|M\u0103mMap.Data\\MamMap.Data.csproj|c:\\users\\nghe\\source\\repos\\m\u0103mmap\\m\u0103mmap\\m\u0103mmap.data\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{216A74DD-1DCF-4388-A377-E9159817BECA}|M\u0103mMap.Data\\MamMap.Data.csproj|solutionrelative:m\u0103mmap.data\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA5870A7-F07A-4D44-8FA9-F8AB4E6B070A}|..\\M\u0103mMapApp\\MamMapApp.csproj|c:\\users\\nghe\\source\\repos\\m\u0103mmap\\m\u0103mmapapp\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 15,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMapApp\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "..\\M\u0103mMapApp\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMapApp\\Services\\UserService.cs",
+              "RelativeToolTip": "..\\M\u0103mMapApp\\Services\\UserService.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAMwBgAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T22:13:05.359Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMapApp\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "..\\M\u0103mMapApp\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMapApp\\Properties\\launchSettings.json",
+              "RelativeToolTip": "..\\M\u0103mMapApp\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-18T21:49:26.235Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMapApp\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "..\\M\u0103mMapApp\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMapApp\\Controllers\\UserController.cs",
+              "RelativeToolTip": "..\\M\u0103mMapApp\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T21:45:19.538Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MamMapDBContextFactory.cs",
+              "DocumentMoniker": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMap\\M\u0103mMap.Data\\EF\\MamMapDBContextFactory.cs",
+              "RelativeDocumentMoniker": "M\u0103mMap.Data\\EF\\MamMapDBContextFactory.cs",
+              "ToolTip": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMap\\M\u0103mMap.Data\\EF\\MamMapDBContextFactory.cs",
+              "RelativeToolTip": "M\u0103mMap.Data\\EF\\MamMapDBContextFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T21:24:24.685Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMapApp\\Program.cs",
+              "RelativeDocumentMoniker": "..\\M\u0103mMapApp\\Program.cs",
+              "ToolTip": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMapApp\\Program.cs",
+              "RelativeToolTip": "..\\M\u0103mMapApp\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T20:55:09.826Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMapApp\\appsettings.json",
+              "RelativeDocumentMoniker": "..\\M\u0103mMapApp\\appsettings.json",
+              "ToolTip": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMapApp\\appsettings.json",
+              "RelativeToolTip": "..\\M\u0103mMapApp\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-18T21:53:34.658Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMapApp\\Services\\Interfaces\\IUserService.cs",
+              "RelativeDocumentMoniker": "..\\M\u0103mMapApp\\Services\\Interfaces\\IUserService.cs",
+              "ToolTip": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMapApp\\Services\\Interfaces\\IUserService.cs",
+              "RelativeToolTip": "..\\M\u0103mMapApp\\Services\\Interfaces\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T22:13:30.887Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMap\\M\u0103mMap.Data\\appsettings.json",
+              "RelativeDocumentMoniker": "M\u0103mMap.Data\\appsettings.json",
+              "ToolTip": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMap\\M\u0103mMap.Data\\appsettings.json",
+              "RelativeToolTip": "M\u0103mMap.Data\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-18T21:19:31.637Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MamMapApp.csproj",
+              "DocumentMoniker": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMapApp\\MamMapApp.csproj",
+              "RelativeDocumentMoniker": "..\\M\u0103mMapApp\\MamMapApp.csproj",
+              "ToolTip": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMapApp\\MamMapApp.csproj",
+              "RelativeToolTip": "..\\M\u0103mMapApp\\MamMapApp.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-18T21:53:43.801Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UserConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMap\\M\u0103mMap.Data\\Configurations\\UserConfiguration.cs",
+              "RelativeDocumentMoniker": "M\u0103mMap.Data\\Configurations\\UserConfiguration.cs",
+              "ToolTip": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMap\\M\u0103mMap.Data\\Configurations\\UserConfiguration.cs",
+              "RelativeToolTip": "M\u0103mMap.Data\\Configurations\\UserConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T20:45:11.978Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MamMapDBContext.cs",
+              "DocumentMoniker": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMap\\M\u0103mMap.Data\\EF\\MamMapDBContext.cs",
+              "RelativeDocumentMoniker": "M\u0103mMap.Data\\EF\\MamMapDBContext.cs",
+              "ToolTip": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMap\\M\u0103mMap.Data\\EF\\MamMapDBContext.cs",
+              "RelativeToolTip": "M\u0103mMap.Data\\EF\\MamMapDBContext.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAADwvxcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T20:20:25.387Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "MamMap.Data.csproj",
+              "DocumentMoniker": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMap\\M\u0103mMap.Data\\MamMap.Data.csproj",
+              "RelativeDocumentMoniker": "M\u0103mMap.Data\\MamMap.Data.csproj",
+              "ToolTip": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMap\\M\u0103mMap.Data\\MamMap.Data.csproj",
+              "RelativeToolTip": "M\u0103mMap.Data\\MamMap.Data.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-18T19:31:40.028Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMap\\M\u0103mMap.Data\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "M\u0103mMap.Data\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMap\\M\u0103mMap.Data\\Entities\\User.cs",
+              "RelativeToolTip": "M\u0103mMap.Data\\Entities\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T20:24:45.836Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMapApp\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "..\\M\u0103mMapApp\\Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMapApp\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "..\\M\u0103mMapApp\\Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T21:08:49.656Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1264,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1097,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
