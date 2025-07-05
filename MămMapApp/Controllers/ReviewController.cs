@@ -71,14 +71,12 @@ namespace MamMapApp.Controllers
         [HttpGet("getAllReviewsAndRepliesBySnackPlaceId")]
         public async Task<IActionResult> GetAllReviewsBySnackPlace(Guid snackPlaceId)
         {
+            Guid currentUserId = Guid.Empty;
+
             var userIdClaim = User.FindFirst("userId") ?? User.FindFirst(ClaimTypes.NameIdentifier);
-            if (userIdClaim == null || !Guid.TryParse(userIdClaim.Value, out Guid currentUserId))
+            if (userIdClaim != null && Guid.TryParse(userIdClaim.Value, out Guid parsedUserId))
             {
-                return Unauthorized(new
-                {
-                    status = 401,
-                    message = "Người dùng không xác thực."
-                });
+                currentUserId = parsedUserId;
             }
 
             var reviews = await _reviewService.GetAllReviewsWithRepliesBySnackPlaceIdAsync(snackPlaceId, currentUserId);

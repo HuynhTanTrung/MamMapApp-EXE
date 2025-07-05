@@ -918,6 +918,49 @@
         }
       }
     },
+    "/api/Payment/search": {
+      "post": {
+        "tags": [
+          "Payment"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchPaymentRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchPaymentRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchPaymentRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Payment/count": {
+      "get": {
+        "tags": [
+          "Payment"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/PremiumPackage/create": {
       "post": {
         "tags": [
@@ -1550,6 +1593,68 @@
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/UpdateSnackPlaceDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/SnackPlaces/closeToggle": {
+      "put": {
+        "tags": [
+          "SnackPlaces"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ToggleCloseRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ToggleCloseRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ToggleCloseRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/SnackPlaces/delete": {
+      "delete": {
+        "tags": [
+          "SnackPlaces"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteSnackPlaceRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteSnackPlaceRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteSnackPlaceRequest"
               }
             }
           }
@@ -2420,6 +2525,16 @@
         },
         "additionalProperties": false
       },
+      "DeleteSnackPlaceRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
       "FilterSnackPlaceRequest": {
         "type": "object",
         "properties": {
@@ -2694,6 +2809,24 @@
         },
         "additionalProperties": false
       },
+      "SearchPaymentRequest": {
+        "type": "object",
+        "properties": {
+          "paymentCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "pageNum": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "SearchSnackPlaceRequest": {
         "type": "object",
         "properties": {
@@ -2760,6 +2893,16 @@
           "pageSize": {
             "type": "integer",
             "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ToggleCloseRequest": {
+        "type": "object",
+        "properties": {
+          "snackPlaceId": {
+            "type": "string",
+            "format": "uuid"
           }
         },
         "additionalProperties": false

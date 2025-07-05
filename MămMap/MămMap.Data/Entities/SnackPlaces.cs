@@ -21,6 +21,7 @@ namespace MamMap.Data.Entities
         public int? AveragePrice { get; set; }
         public string Image { get; set; } = string.Empty;
         public bool Status { get; set; } = true;
+        public bool IsTemporarilyClosed { get; set; } = false;
         public Guid? BusinessModelId { get; set; }
         public string? MainDish { get; set; } = string.Empty;
         public ICollection<SnackPlaceAttributes> SnackPlaceAttributes { get; set; }

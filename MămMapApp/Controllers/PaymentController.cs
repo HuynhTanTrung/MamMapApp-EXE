@@ -192,5 +192,25 @@ namespace MamMapApp.Controllers
                 })
             });
         }
+
+        [HttpPost("search")]
+        public async Task<IActionResult> SearchPayments([FromBody] SearchPaymentRequest request)
+        {
+            var result = await _paymentService.SearchPaymentAsync(request);
+            return Ok(result);
+        }
+
+        [HttpGet("count")]
+        public async Task<IActionResult> CountTotalPayments()
+        {
+            var count = await _paymentService.CountTotalPaymentsAsync();
+            return Ok(new
+            {
+                Status = 200,
+                Message = "Tổng số giao dịch thanh toán",
+                Data = new { TotalPayments = count }
+            });
+        }
+
     }
 }

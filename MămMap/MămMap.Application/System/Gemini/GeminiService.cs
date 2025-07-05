@@ -18,7 +18,16 @@ namespace MamMap.Application.System.Gemini
 
         private readonly List<string> _reviewKeywords = new() { "đánh giá", "review", "nhận xét" };
         private readonly List<string> _greetingKeywords = new() { "xin chào", "chào", "hi", "hello", "alo", "ê" };
-        private readonly List<string> _searchKeywords = new() { "quán ăn", "quán nào", "ngon", "khu vực", "quận", "gần đây", "ở đâu" };
+        private readonly List<string> _searchKeywords = new() { "quán ăn", "quán nào", "ngon", "khu vực", "quận", "gần đây", "ở đâu", "đói", "gợi ý" };
+        private readonly List<string> _dishKeywords = new() { "món", "ăn", "thèm", "muốn ăn", "liệt kê", "có gì" };
+
+        // TAO THÊM VÀO: Keyword để check câu hỏi về phí
+        private readonly List<string> _feeKeywords = new() { "phí", "thu phí", "giá", "tiền", "trả phí", "miễn phí", "cost", "fee", "price" };
+
+        private static readonly HashSet<string> _noiseWords = new(StringComparer.OrdinalIgnoreCase)
+        {
+            "quán", "ăn", "tiệm", "cửa hàng", "shop", "hàng", "chỗ", "ngon", "nổi", "tiếng", "ở", "tại", "nào", "mày", "tôi", "cho"
+        };
 
         public GeminiService(IHttpClientFactory httpClientFactory)
         {
@@ -34,69 +43,53 @@ namespace MamMap.Application.System.Gemini
         {
             try
             {
-                var normalizedPrompt = RemoveDiacritics(prompt.ToLower());
-                var promptWords = normalizedPrompt.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+                var normalizedPrompt = prompt.ToLower().Trim();
                 var greetingName = !string.IsNullOrWhiteSpace(userName) ? $" {userName}" : "";
-                var promptPhrases = new List<string>();
 
-                // Sinh 2-word phrases như cũ
-                for (int i = 0; i < promptWords.Length - 1; i++)
-                {
-                    promptPhrases.Add($"{promptWords[i]} {promptWords[i + 1]}");
-                }
-
-                // Thêm cả từ đơn
-                promptPhrases.AddRange(promptWords);
-
-                // Handle greeting
+                // 1. Handle greeting
                 if (_greetingKeywords.Contains(normalizedPrompt))
                 {
                     return (true, "Thành công", $"Măm Map xin chào{greetingName}! Tôi là Măm Map Bot, bạn cần hỗ trợ gì về nền tảng review quán ăn vặt Măm Map ạ?");
                 }
 
-                // Check for review-related question
+                // TAO THÊM VÀO: Handle questions about fees
+                if (_feeKeywords.Any(keyword => normalizedPrompt.Contains(keyword)))
+                {
+                    var feeResponse = "Chào bạn, Măm Map hoàn toàn **miễn phí** cho người dùng tìm kiếm nhé. " +
+                                      "Tụi mình chỉ thu phí đối với các **chủ quán (merchant)** với 2 gói dịch vụ là **Cơ bản** và **Tiêu chuẩn** để quản lý và quảng bá quán hiệu quả hơn. " +
+                                      "Nếu bạn là chủ quán và muốn biết thêm chi tiết, hãy tải app về để tìm hiểu kỹ hơn nha!";
+                    return (true, "Thành công", feeResponse);
+                }
+
+                // Logic còn lại giữ nguyên...
                 bool isReviewRequest = _reviewKeywords.Any(keyword => normalizedPrompt.Contains(keyword));
+                bool isGeneralSearchOrHungry = _searchKeywords.Any(keyword => normalizedPrompt.Contains(keyword));
+                bool isAskingAboutDishes = _dishKeywords.Any(keyword => normalizedPrompt.Contains(keyword));
 
-                // Try to find a matching snack place by name
-                var matchingPlace = snackPlaces.FirstOrDefault(place =>
+                SnackPlaces? matchingPlace = null;
+                Reviews? latestReview = null;
+                List<Dishes> dishesForPlace = new List<Dishes>();
+
+                var processedPromptForPlaceSearch = RemoveDiacritics(ExtractKeywords(normalizedPrompt));
+
+                // 2. Ưu tiên tìm kiếm quán theo tên
+                foreach (var place in snackPlaces)
                 {
-                    var promptText = RemoveDiacritics(prompt.ToLower());
-                    var placeText = RemoveDiacritics(place.PlaceName.ToLower());
+                    var processedPlaceName = RemoveDiacritics(ExtractKeywords(place.PlaceName.ToLower()));
 
-                    return placeText.Contains(promptText) || promptText.Contains(placeText);
-                });
-
-                // If no place matched by name, try matching via dishes
-                if (matchingPlace == null)
-                {
-                    var cleanedPrompt = RemoveDiacritics(prompt.ToLower());
-                    var promptTokens = cleanedPrompt.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-
-                    var matchedDishList = allDishes
-                        .Where(d => d.Status)
-                        .Select(d => new
-                        {
-                            Dish = d,
-                            Score = promptTokens.Count(pt =>
-                                RemoveDiacritics(d.Name.ToLower()).Split(' ', StringSplitOptions.RemoveEmptyEntries)
-                                    .Any(dt => pt == dt))
-                        })
-                        .Where(x => x.Score >= 2) // At least 2 word matches to reduce false positives
-                        .OrderByDescending(x => x.Score)
-                        .ToList();
-
-                    if (matchedDishList.Any())
+                    if (processedPromptForPlaceSearch.Contains(processedPlaceName) ||
+                        processedPlaceName.Contains(processedPromptForPlaceSearch) ||
+                        normalizedPrompt.Contains(place.PlaceName.ToLower()) ||
+                        place.PlaceName.ToLower().Contains(normalizedPrompt))
                     {
-                        var bestDish = matchedDishList.First().Dish;
-                        matchingPlace = snackPlaces.FirstOrDefault(p => p.SnackPlaceId == bestDish.SnackPlaceId);
+                        matchingPlace = place;
+                        break;
                     }
                 }
 
-
+                // 3. Nếu tìm thấy quán cụ thể
                 if (matchingPlace != null)
                 {
-                    Reviews? latestReview = null;
-
                     if (isReviewRequest)
                     {
                         latestReview = reviews
@@ -105,7 +98,7 @@ namespace MamMap.Application.System.Gemini
                             .FirstOrDefault();
                     }
 
-                    var dishesForPlace = allDishes
+                    dishesForPlace = allDishes
                         .Where(d => d.SnackPlaceId == matchingPlace.SnackPlaceId && d.Status)
                         .OrderByDescending(d => d.Price)
                         .Take(5)
@@ -115,9 +108,48 @@ namespace MamMap.Application.System.Gemini
                     return (true, "Thành công", aiResponse);
                 }
 
-                // No matching place found – fallback to general Gemini API
-                var fallbackResponse = await CallGeminiNoPlaceAPI(prompt, userName);
-                return (true, "Thành công", fallbackResponse);
+                // 4. Nếu không tìm thấy quán cụ thể, thử tìm qua món ăn
+                if (matchingPlace == null && isAskingAboutDishes)
+                {
+                    foreach (var dish in allDishes)
+                    {
+                        var normalizedDishName = dish.Name.ToLower();
+                        if ((normalizedPrompt.Contains(normalizedDishName) || RemoveDiacritics(normalizedPrompt).Contains(RemoveDiacritics(normalizedDishName))))
+                        {
+                            matchingPlace = snackPlaces.FirstOrDefault(p => p.SnackPlaceId == dish.SnackPlaceId);
+                            if (matchingPlace != null)
+                            {
+                                dishesForPlace = allDishes
+                                    .Where(d => d.SnackPlaceId == matchingPlace.SnackPlaceId && d.Status)
+                                    .OrderByDescending(d => d.Price)
+                                    .Take(5)
+                                    .ToList();
+
+                                if (isReviewRequest)
+                                {
+                                    latestReview = reviews
+                                        .Where(r => r.SnackPlaceId == matchingPlace.SnackPlaceId && r.Status && !string.IsNullOrEmpty(r.Comment))
+                                        .OrderByDescending(r => r.ReviewDate)
+                                        .FirstOrDefault();
+                                }
+                                var aiResponse = await CallGeminiAPIWithPlace(prompt, userName, matchingPlace, latestReview, dishesForPlace);
+                                return (true, "Thành công", aiResponse);
+                            }
+                        }
+                    }
+                }
+
+                // 5. Fallback: tìm kiếm chung hoặc câu hỏi khác
+                if (isGeneralSearchOrHungry)
+                {
+                    var fallbackResponse = await CallGeminiAPI(prompt, userName, snackPlaces);
+                    return (true, "Thành công", fallbackResponse);
+                }
+                else
+                {
+                    var fallbackResponse = await CallGeminiAPI(prompt, userName, new List<SnackPlaces>());
+                    return (true, "Thành công", fallbackResponse);
+                }
             }
             catch (Exception ex)
             {
@@ -131,14 +163,15 @@ namespace MamMap.Application.System.Gemini
 
             var promptInstruction = @"
             Bạn là Măm Map Bot, một trợ lý ảo chuyên tư vấn quán ăn vặt.
+            Mục tiêu của bạn là giới thiệu quán như một người từng trải nghiệm, thân thiện và tự nhiên.
 
-            ⚠️ Tuyệt đối KHÔNG được bịa thêm món ăn nào ngoài danh sách món ăn được cung cấp bên dưới.
-
-            - Nếu không có món nào khác, thì chỉ nói đúng các món đã có.
-            - Không được nói những món 'thỉnh thoảng có', 'có thể có', hoặc 'ngoài ra còn có thể có'.
-            - Phải trả lời như người thật từng ăn, thân thiện và tự nhiên.
-
-            Mục tiêu là giới thiệu quán như một người từng trải nghiệm, nhưng chỉ dựa vào dữ liệu đã cho.";
+            Hãy trả lời bằng cách tổng hợp thông tin về quán, địa chỉ, và các món ăn (nếu có).
+            Nếu có đánh giá gần nhất, hãy lồng ghép nó vào câu trả lời một cách tự nhiên.
+            Tuyệt đối KHÔNG được bịa thêm bất kỳ món ăn nào ngoài danh sách món ăn được cung cấp.
+            Chỉ nói đúng các món đã có.
+            Không được nói những món 'thỉnh thoảng có', 'có thể có', hoặc 'ngoài ra còn có thể có'.
+            Luôn giữ giọng điệu thân thiện, nhiệt tình và như một người bạn gợi ý.
+            ";
 
             infoText.AppendLine($"Tên quán: {place.PlaceName}");
             infoText.AppendLine($"Địa chỉ: {place.Address}");
@@ -147,17 +180,17 @@ namespace MamMap.Application.System.Gemini
             if (review != null && !string.IsNullOrEmpty(review.Comment))
                 infoText.AppendLine($"Đánh giá gần nhất: {review.Comment}");
 
-            var dishes = allDishes
-                .Where(d => d.SnackPlaceId == place.SnackPlaceId && d.Status)
-                .ToList();
-
-            if (dishes.Any())
+            if (allDishes.Any())
             {
-                infoText.AppendLine("Danh sách món ăn tại quán:");
-                foreach (var dish in dishes)
+                infoText.AppendLine("Danh sách món ăn tại quán (chỉ liệt kê các món này, không thêm):");
+                foreach (var dish in allDishes)
                 {
                     infoText.AppendLine($"- {dish.Name}: {dish.Description}");
                 }
+            }
+            else
+            {
+                infoText.AppendLine("Quán này hiện chưa có thông tin món ăn nào được cập nhật trên Măm Map. Có thể quán mới hoặc chưa cập nhật đầy đủ menu.");
             }
 
             infoText.Insert(0, promptInstruction + "\n\n");
@@ -169,7 +202,7 @@ namespace MamMap.Application.System.Gemini
                     role = "user",
                     parts = new[] {
                         new {
-                            text = "Bạn là Măm Map Bot, một trợ lý ảo của nền tảng Măm Map. Măm Map là một hệ thống giúp người dùng tìm kiếm và đánh giá các quán ăn vặt. Dựa trên thông tin dưới đây về một quán ăn, hãy trả lời một cách thân thiện, tự nhiên và hữu ích như một người từng trải nghiệm quán. Không cần liệt kê máy móc, hãy diễn đạt như một người hiểu rõ về quán."
+                            text = "Bạn là Măm Map Bot, một trợ lý ảo của nền tảng Măm Map. Măm Map là một hệ thống giúp người dùng tìm kiếm và đánh giá các quán ăn vặt. Dựa trên thông tin dưới đây về một quán ăn, hãy trả lời một cách thân thiện, tự nhiên và hữu ích như một người từng trải nghiệm quán. Không cần liệt kê máy móc, hãy diễn đạt như một người hiểu rõ về quán. Đừng bịa thêm món ăn hoặc thông tin không có."
                         }
                     }
                 },
@@ -177,7 +210,7 @@ namespace MamMap.Application.System.Gemini
                 {
                     role = "model",
                     parts = new[] {
-                        new { text = "Vâng, tôi đã hiểu. Tôi sẽ trả lời một cách thân thiện dựa trên thông tin quán bên dưới." }
+                        new { text = "Vâng, tôi đã hiểu. Tôi sẽ trả lời một cách thân thiện dựa trên thông tin quán bên dưới và tuyệt đối không bịa thêm thông tin." }
                     }
                 },
                 new
@@ -185,7 +218,7 @@ namespace MamMap.Application.System.Gemini
                     role = "user",
                     parts = new[] {
                         new {
-                            text = $"Câu hỏi của người dùng: {prompt}\nThông tin quán:\n{infoText}"
+                            text = $"Câu hỏi của người dùng: {prompt}\nThông tin quán bạn cần tư vấn:\n{infoText}"
                         }
                     }
                 }
@@ -210,68 +243,34 @@ namespace MamMap.Application.System.Gemini
             return botReply;
         }
 
-        private async Task<string> CallGeminiNoPlaceAPI(string prompt, string? userName)
+        private async Task<string> CallGeminiAPI(string prompt, string? userName, List<SnackPlaces> snackPlaces)
         {
-            var instruction = @"
-            Bạn là Măm Map Bot, trợ lý ảo thân thiện của nền tảng Măm Map.
+            var initialPrompt = @"
+            Bạn là Măm Map Bot, một trợ lý ảo của nền tảng Măm Map. Măm Map là một hệ thống trung gian giúp các chủ quán ăn vặt đăng ký và quản lý thông tin quán của họ, đồng thời cho phép người dùng tìm kiếm, đánh giá và review các quán ăn vặt.
+            Mọi câu trả lời của bạn phải liên quan đến cách sử dụng nền tảng Măm Map, lợi ích cho chủ quán, cách review, cách tìm quán, giải quyết vấn đề trên nền tảng.
+            Tuyệt đối không tư vấn về món ăn cụ thể của một quán hoặc gợi ý quán ăn ngoài nền tảng nếu không có trong dữ liệu bạn được cung cấp.
+            Luôn giữ thái độ thân thiện, chuyên nghiệp và hữu ích.
+            ";
 
-            Người dùng vừa hỏi về một món ăn hoặc quán ăn, tuy nhiên hiện tại **không có quán nào trong hệ thống** phù hợp với nội dung họ hỏi.
+            var fullPrompt = new StringBuilder(initialPrompt);
 
-            ⚠️ Yêu cầu:
-            - KHÔNG được bịa tên quán.
-            - KHÔNG gợi ý quán nào ngoài hệ thống.
-            - Chỉ trả lời rằng hiện tại Măm Map chưa có thông tin phù hợp.
-            - Có thể khuyến khích người dùng thử món/quán khác.
-            - Giữ giọng văn thân thiện, tự nhiên, như một người đang trò chuyện.";
+            bool isGeneralSearch = _searchKeywords.Any(keyword => prompt.ToLower().Contains(keyword));
 
-
-            var history = new List<object>
-    {
-        new
-        {
-            role = "user",
-            parts = new[] {
-                new { text = instruction }
-            }
-        },
-        new
-        {
-            role = "model",
-            parts = new[] {
-                new { text = "Vâng, tôi đã hiểu. Tôi sẽ trả lời thật thân thiện và không bịa thông tin quán." }
-            }
-        },
-        new
-        {
-            role = "user",
-            parts = new[] {
-                new { text = $"Người dùng hỏi: {prompt}" }
-            }
-        }
-    };
-
-            var requestBody = new { contents = history };
-            var content = new StringContent(JsonConvert.SerializeObject(requestBody), Encoding.UTF8, "application/json");
-
-            var res = await _httpClient.PostAsync(ApiUrl, content);
-            res.EnsureSuccessStatusCode();
-
-            var resString = await res.Content.ReadAsStringAsync();
-            dynamic resJson = JsonConvert.DeserializeObject(resString);
-
-            string botReply = resJson?.candidates?[0]?.content?.parts?[0]?.text
-                ?? "Xin lỗi, Măm Map Bot chưa thể trả lời yêu cầu của bạn.";
-
-            if (!string.IsNullOrWhiteSpace(userName) && botReply.Length > 5)
+            if (isGeneralSearch && snackPlaces.Any())
             {
-                botReply = $"Chào bạn {userName}, {char.ToLower(botReply[0])}{botReply.Substring(1)}";
+                fullPrompt.AppendLine("\nNếu người dùng hỏi về quán ăn, hãy gợi ý các quán từ danh sách sau. Hãy chọn 3-5 quán nổi bật hoặc ngẫu nhiên từ danh sách và giới thiệu sơ lược về chúng, kèm theo địa chỉ. Đừng đưa ra danh sách quá dài, chỉ gợi ý những quán nổi bật nhất hoặc phù hợp với ngữ cảnh nếu có. Nếu không có ngữ cảnh, hãy đưa ra một vài quán ngẫu nhiên.");
+                fullPrompt.AppendLine("Danh sách các quán ăn vặt hiện có trên Măm Map:");
+                foreach (var place in snackPlaces)
+                {
+                    fullPrompt.AppendLine($"- Tên: {place.PlaceName}, Địa chỉ: {place.Address}");
+                }
+                fullPrompt.AppendLine($"\nCâu hỏi của người dùng: {prompt}");
+            }
+            else
+            {
+                fullPrompt.AppendLine($"\nCâu hỏi của người dùng: {prompt}");
             }
 
-            return botReply;
-        }
-
-        private async Task<string> CallGeminiAPI(string prompt, string? userName)
-        {
             var history = new List<object>
             {
                 new
@@ -279,7 +278,7 @@ namespace MamMap.Application.System.Gemini
                     role = "user",
                     parts = new[] {
                         new {
-                            text = "Bạn là Măm Map Bot, một trợ lý ảo của nền tảng Măm Map. Măm Map là một hệ thống trung gian giúp các chủ quán ăn vặt đăng ký và quản lý thông tin quán của họ, đồng thời cho phép người dùng tìm kiếm, đánh giá và review các quán ăn vặt. Mọi câu trả lời của bạn phải liên quan đến cách sử dụng nền tảng Măm Map, lợi ích cho chủ quán, cách review, cách tìm quán, giải quyết vấn đề trên nền tảng. Nếu người dùng hỏi về quán ăn cụ thể hoặc món ăn ngon ở một khu vực, hãy hướng dẫn họ cách sử dụng tính năng tìm kiếm trên Măm Map để tìm quán phù hợp. Tuyệt đối không tư vấn về món ăn cụ thể của một quán hoặc gợi ý quán ăn ngoài nền tảng. Luôn giữ thái độ thân thiện, chuyên nghiệp và hữu ích."
+                            text = "Bạn là Măm Map Bot, một trợ lý ảo của nền tảng Măm Map. Hãy trả lời câu hỏi của người dùng dựa trên vai trò của bạn. Nếu câu hỏi liên quan đến tìm quán ăn, hãy gợi ý các quán có sẵn hoặc hướng dẫn cách tìm trên Măm Map. Luôn thân thiện và hữu ích."
                         }
                     }
                 },
@@ -293,7 +292,7 @@ namespace MamMap.Application.System.Gemini
                 new
                 {
                     role = "user",
-                    parts = new[] { new { text = prompt } }
+                    parts = new[] { new { text = fullPrompt.ToString() } }
                 }
             };
 
@@ -318,12 +317,12 @@ namespace MamMap.Application.System.Gemini
 
         private static string ExtractKeywords(string input)
         {
-            var keywords = input.ToLower()
-                .Replace("quán ăn", "")
-                .Replace("quán", "")
-                .Replace("tiệm", "")
-                .Trim();
-            return keywords;
+            var words = input.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+                             .Select(word => word.ToLower());
+
+            var filteredWords = words.Where(word => !_noiseWords.Contains(word));
+
+            return string.Join(" ", filteredWords).Trim();
         }
 
         private static string RemoveDiacritics(string input)

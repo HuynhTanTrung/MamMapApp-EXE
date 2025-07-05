@@ -16,6 +16,7 @@ namespace MamMap.Application.System.SnackPlace
         Task<SnackPlaces?> GetSnackPlaceByIdAsync(Guid id);
         Task<SnackPlaces?> UpdateSnackPlaceAsync(UpdateSnackPlaceDTO dto);
         Task<(bool isSuccess, string? errorMessage)> DeleteSnackPlaceAsync(Guid id);
+        Task<(bool isSuccess, string message)> ToggleTemporaryCloseAsync(Guid snackPlaceId);
         Task<object> SearchSnackPlacesAsync(SearchSnackPlaceRequest request);
         Task<(bool Success, string ErrorMessage)> LogClickAsync(Guid userId, Guid snackPlaceId);
         Task<object> GetClickStatisticsAsync(Guid userId, DateTime startDate, DateTime endDate);

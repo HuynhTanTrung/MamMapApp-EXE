@@ -119,6 +119,7 @@ namespace MamMapApp.Controllers
                     image = snackPlace.Image,
                     mainDish = snackPlace.MainDish,
                     status = snackPlace.Status,
+                    closed = snackPlace.IsTemporarilyClosed,
                     userId = snackPlace.UserId,
                     businessModelId = snackPlace.BusinessModelId,
                     businessModelName = snackPlace.BusinessModels?.Name,
@@ -272,6 +273,48 @@ namespace MamMapApp.Controllers
                             }).Distinct().ToList()
                     }
                 }
+            });
+        }
+
+        [HttpPut("closeToggle")]
+        public async Task<IActionResult> ToggleTemporaryClose([FromBody] ToggleCloseRequest request)
+        {
+            var (isSuccess, message) = await _snackPlaceService.ToggleTemporaryCloseAsync(request.SnackPlaceId);
+
+            if (!isSuccess)
+            {
+                return NotFound(new
+                {
+                    status = "error",
+                    message
+                });
+            }
+
+            return Ok(new
+            {
+                status = 200,
+                message
+            });
+        }
+
+        [HttpDelete("delete")]
+        public async Task<IActionResult> DeleteSnackPlace([FromBody] DeleteSnackPlaceRequest request)
+        {
+            var (isSuccess, errorMessage) = await _snackPlaceService.DeleteSnackPlaceAsync(request.snackPlaceId);
+
+            if (!isSuccess)
+            {
+                return NotFound(new
+                {
+                    status = "error",
+                    message = errorMessage
+                });
+            }
+
+            return Ok(new
+            {
+                status = 200,
+                message = "Xóa quán ăn thành công."
             });
         }
 

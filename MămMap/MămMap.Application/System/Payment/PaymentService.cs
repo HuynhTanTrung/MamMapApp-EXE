@@ -101,5 +101,64 @@ namespace MamMap.Application.System.Payment
                 .Where(x => x.UserId == userId && x.IsActive)
                 .ToListAsync();
         }
+
+        public async Task<object> SearchPaymentAsync(SearchPaymentRequest request)
+        {
+            if (request.PageNum <= 0) request.PageNum = 1;
+            if (request.PageSize <= 0) request.PageSize = 10;
+
+            var query = _context.Payment
+                .Include(p => p.PremiumPackage)
+                .AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(request.PaymentCode))
+            {
+                query = query.Where(p => p.PaymentCode == request.PaymentCode);
+            }
+
+            var total = await query.CountAsync();
+
+            var payments = await query
+                .OrderByDescending(p => p.CreatedAt)
+                .Skip((request.PageNum - 1) * request.PageSize)
+                .Take(request.PageSize)
+                .Select(p => new
+                {
+                    p.Id,
+                    p.UserId,
+                    p.PremiumPackageId,
+                    PremiumPackageName = p.PremiumPackage.Name,
+                    p.Amount,
+                    p.PaymentCode,
+                    p.PaymentStatus,
+                    p.CreatedAt,
+                    p.PaidAt,
+                    p.TransactionId
+                })
+                .ToListAsync();
+
+            return new
+            {
+                status = 200,
+                message = payments.Count > 0 ? "Lấy danh sách thanh toán thành công." : "Không tìm thấy thanh toán nào.",
+                data = new
+                {
+                    pageData = payments,
+                    pageInfo = new
+                    {
+                        pageNum = request.PageNum,
+                        pageSize = request.PageSize,
+                        total,
+                        totalPages = (int)Math.Ceiling((double)total / request.PageSize)
+                    }
+                }
+            };
+        }
+
+        public async Task<int> CountTotalPaymentsAsync()
+        {
+            return await _context.Payment.CountAsync();
+        }
+
     }
 }

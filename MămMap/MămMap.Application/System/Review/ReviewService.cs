@@ -302,7 +302,9 @@ namespace MamMap.Application.System.Review
                     comment = r.Comment,
                     date = r.ReviewDate,
                     recommendCount = r.RecommendCount,
-                    isRecommended = _context.ReviewRecommendations.Any(rr => rr.ReviewId == r.Id && rr.UserId == currentUserId),
+                    isRecommended = currentUserId != Guid.Empty
+                        ? _context.ReviewRecommendations.Any(rr => rr.ReviewId == r.Id && rr.UserId == currentUserId)
+                        : false,
                     status = r.Status
                 })
                 .ToListAsync();

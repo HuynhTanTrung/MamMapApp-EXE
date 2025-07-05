@@ -14,5 +14,7 @@ namespace MamMap.Application.System.Payment
         Task<object?> CheckPaymentStatusAsync(Guid userId, Guid premiumPackageId);
         Task<List<object>> GetPaymentHistoryAsync(Guid userId);
         Task<List<UserPremiumPackage>> GetUserPremiumPackagesAsync(Guid userId);
+        Task<object> SearchPaymentAsync(SearchPaymentRequest request);
+        Task<int> CountTotalPaymentsAsync();
     }
 }

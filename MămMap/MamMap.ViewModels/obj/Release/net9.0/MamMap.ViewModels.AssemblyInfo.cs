@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MamMap.ViewModels")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+96d534e53ad3cf84af6369a4d11f529679f41e7e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+49ba80aad7cacb8f1e20339283b300fd5b13df54")]
 [assembly: System.Reflection.AssemblyProductAttribute("MamMap.ViewModels")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MamMap.ViewModels")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

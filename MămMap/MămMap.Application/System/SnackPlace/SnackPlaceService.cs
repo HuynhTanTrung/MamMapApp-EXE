@@ -22,6 +22,13 @@ namespace MamMap.Application.System.SnackPlace
 
         public async Task<SnackPlaces?> CreateSnackPlaceAsync(SnackPlaces snackPlace, List<Guid>? tasteIds, List<Guid>? dietIds, List<Guid>? foodTypeIds)
         {
+            var existing = await _context.SnackPlaces
+                .FirstOrDefaultAsync(p => p.UserId == snackPlace.UserId && p.Status == true);
+
+            if (existing != null)
+            {
+                return null;
+            }
             _context.SnackPlaces.Add(snackPlace);
 
             var attributes = new List<SnackPlaceAttributes>();
@@ -149,6 +156,7 @@ namespace MamMap.Application.System.SnackPlace
                 image = sp.Image,
                 mainDish = sp.MainDish,
                 status = sp.Status,
+                closed = sp.IsTemporarilyClosed,
                 userId = sp.UserId,
                 businessModelId = sp.BusinessModelId,
                 businessModelName = sp.BusinessModels?.Name,
@@ -383,6 +391,27 @@ namespace MamMap.Application.System.SnackPlace
             return (true, null);
         }
 
+        public async Task<(bool isSuccess, string message)> ToggleTemporaryCloseAsync(Guid snackPlaceId)
+        {
+            var snackPlace = await _context.SnackPlaces
+                .FirstOrDefaultAsync(sp => sp.SnackPlaceId == snackPlaceId && sp.Status == true);
+
+            if (snackPlace == null)
+            {
+                return (false, "Không tìm thấy quán ăn hợp lệ.");
+            }
+
+            snackPlace.IsTemporarilyClosed = !snackPlace.IsTemporarilyClosed;
+            _context.SnackPlaces.Update(snackPlace);
+            await _context.SaveChangesAsync();
+
+            var message = snackPlace.IsTemporarilyClosed
+                ? "Quán ăn đã được tạm đóng."
+                : "Quán ăn đã mở trở lại.";
+
+            return (true, message);
+        }
+
         public async Task<(bool Success, string ErrorMessage)> LogClickAsync(Guid userId, Guid snackPlaceId)
         {
             var userExists = await _context.Users.AnyAsync(u => u.Id == userId);
@@ -400,8 +429,7 @@ namespace MamMap.Application.System.SnackPlace
                 .AnyAsync(c =>
                     c.UserId == userId &&
                     c.SnackPlaceId == snackPlaceId &&
-                    c.ClickedAt >= today &&
-                    c.ClickedAt < tomorrow);
+                    EF.Functions.DateDiffDay(c.ClickedAt, DateTime.UtcNow) == 0);
 
             if (alreadyClickedToday)
                 return (false, "You've already clicked this snack place today.");
@@ -611,6 +639,7 @@ namespace MamMap.Application.System.SnackPlace
                     sp.BusinessModelId,
                     sp.BusinessModels.Name,
                     sp.Status,
+                    sp.IsTemporarilyClosed,
                     attributes = new
                     {
                         tastes = sp.SnackPlaceAttributes

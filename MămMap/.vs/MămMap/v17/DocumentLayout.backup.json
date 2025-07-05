@@ -3,11 +3,23 @@
   "WorkspaceRootPath": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMap\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C7D3E864-44A8-44D7-BC62-53F710C75F92}|M\u0103mMap.Application\\MamMap.Application.csproj|c:\\users\\nghe\\source\\repos\\m\u0103mmap\\m\u0103mmap\\m\u0103mmap.application\\system\\gemini\\geminiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C7D3E864-44A8-44D7-BC62-53F710C75F92}|M\u0103mMap.Application\\MamMap.Application.csproj|solutionrelative:m\u0103mmap.application\\system\\gemini\\geminiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AA5870A7-F07A-4D44-8FA9-F8AB4E6B070A}|..\\M\u0103mMapApp\\MamMapApp.csproj|c:\\users\\nghe\\source\\repos\\m\u0103mmap\\m\u0103mmapapp\\controllers\\snackplacescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AA5870A7-F07A-4D44-8FA9-F8AB4E6B070A}|..\\M\u0103mMapApp\\MamMapApp.csproj|c:\\users\\nghe\\source\\repos\\m\u0103mmap\\m\u0103mmapapp\\controllers\\geminicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F5E40C79-1C79-4528-B335-44D85C6377BC}|MamMap.ViewModels\\MamMap.ViewModels.csproj|c:\\users\\nghe\\source\\repos\\m\u0103mmap\\m\u0103mmap\\mammap.viewmodels\\system\\snackplace\\deletesnackplacerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5E40C79-1C79-4528-B335-44D85C6377BC}|MamMap.ViewModels\\MamMap.ViewModels.csproj|solutionrelative:mammap.viewmodels\\system\\snackplace\\deletesnackplacerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7D3E864-44A8-44D7-BC62-53F710C75F92}|M\u0103mMap.Application\\MamMap.Application.csproj|c:\\users\\nghe\\source\\repos\\m\u0103mmap\\m\u0103mmap\\m\u0103mmap.application\\system\\snackplace\\snackplaceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7D3E864-44A8-44D7-BC62-53F710C75F92}|M\u0103mMap.Application\\MamMap.Application.csproj|solutionrelative:m\u0103mmap.application\\system\\snackplace\\snackplaceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7D3E864-44A8-44D7-BC62-53F710C75F92}|M\u0103mMap.Application\\MamMap.Application.csproj|c:\\users\\nghe\\source\\repos\\m\u0103mmap\\m\u0103mmap\\m\u0103mmap.application\\system\\snackplace\\isnackplaceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7D3E864-44A8-44D7-BC62-53F710C75F92}|M\u0103mMap.Application\\MamMap.Application.csproj|solutionrelative:m\u0103mmap.application\\system\\snackplace\\isnackplaceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{216A74DD-1DCF-4388-A377-E9159817BECA}|M\u0103mMap.Data\\MamMap.Data.csproj|c:\\users\\nghe\\source\\repos\\m\u0103mmap\\m\u0103mmap\\m\u0103mmap.data\\entities\\snackplaces.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{216A74DD-1DCF-4388-A377-E9159817BECA}|M\u0103mMap.Data\\MamMap.Data.csproj|solutionrelative:m\u0103mmap.data\\entities\\snackplaces.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,7 +29,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,27 +74,66 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "GeminiController.cs",
-              "DocumentMoniker": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMapApp\\Controllers\\GeminiController.cs",
-              "RelativeDocumentMoniker": "..\\M\u0103mMapApp\\Controllers\\GeminiController.cs",
-              "ToolTip": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMapApp\\Controllers\\GeminiController.cs",
-              "RelativeToolTip": "..\\M\u0103mMapApp\\Controllers\\GeminiController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwCIAAAAfAAAAAAAAAA==",
+              "Title": "DeleteSnackPlaceRequest.cs",
+              "DocumentMoniker": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMap\\MamMap.ViewModels\\System\\SnackPlace\\DeleteSnackPlaceRequest.cs",
+              "RelativeDocumentMoniker": "MamMap.ViewModels\\System\\SnackPlace\\DeleteSnackPlaceRequest.cs",
+              "ToolTip": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMap\\MamMap.ViewModels\\System\\SnackPlace\\DeleteSnackPlaceRequest.cs",
+              "RelativeToolTip": "MamMap.ViewModels\\System\\SnackPlace\\DeleteSnackPlaceRequest.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-01T14:48:01.815Z",
+              "WhenOpened": "2025-07-05T06:01:51.607Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SnackPlaces.cs",
+              "DocumentMoniker": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMap\\M\u0103mMap.Data\\Entities\\SnackPlaces.cs",
+              "RelativeDocumentMoniker": "M\u0103mMap.Data\\Entities\\SnackPlaces.cs",
+              "ToolTip": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMap\\M\u0103mMap.Data\\Entities\\SnackPlaces.cs",
+              "RelativeToolTip": "M\u0103mMap.Data\\Entities\\SnackPlaces.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T05:05:11.319Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ISnackPlaceService.cs",
+              "DocumentMoniker": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMap\\M\u0103mMap.Application\\System\\SnackPlace\\ISnackPlaceService.cs",
+              "RelativeDocumentMoniker": "M\u0103mMap.Application\\System\\SnackPlace\\ISnackPlaceService.cs",
+              "ToolTip": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMap\\M\u0103mMap.Application\\System\\SnackPlace\\ISnackPlaceService.cs",
+              "RelativeToolTip": "M\u0103mMap.Application\\System\\SnackPlace\\ISnackPlaceService.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T04:45:23.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SnackPlaceService.cs",
+              "DocumentMoniker": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMap\\M\u0103mMap.Application\\System\\SnackPlace\\SnackPlaceService.cs",
+              "RelativeDocumentMoniker": "M\u0103mMap.Application\\System\\SnackPlace\\SnackPlaceService.cs",
+              "ToolTip": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMap\\M\u0103mMap.Application\\System\\SnackPlace\\SnackPlaceService.cs",
+              "RelativeToolTip": "M\u0103mMap.Application\\System\\SnackPlace\\SnackPlaceService.cs",
+              "ViewState": "AgIAAHIBAAAAAAAAAAAIwIsBAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T04:43:29.687Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "GeminiService.cs",
-              "DocumentMoniker": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMap\\M\u0103mMap.Application\\System\\Gemini\\GeminiService.cs",
-              "RelativeDocumentMoniker": "M\u0103mMap.Application\\System\\Gemini\\GeminiService.cs",
-              "ToolTip": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMap\\M\u0103mMap.Application\\System\\Gemini\\GeminiService.cs",
-              "RelativeToolTip": "M\u0103mMap.Application\\System\\Gemini\\GeminiService.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAEsAAAAtAAAAAAAAAA==",
+              "Title": "SnackPlacesController.cs",
+              "DocumentMoniker": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMapApp\\Controllers\\SnackPlacesController.cs",
+              "RelativeDocumentMoniker": "..\\M\u0103mMapApp\\Controllers\\SnackPlacesController.cs",
+              "ToolTip": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMapApp\\Controllers\\SnackPlacesController.cs",
+              "RelativeToolTip": "..\\M\u0103mMapApp\\Controllers\\SnackPlacesController.cs",
+              "ViewState": "AgIAACMBAAAAAAAAAAAowC0BAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-01T04:33:22.46Z",
+              "WhenOpened": "2025-07-05T04:43:28.191Z",
               "EditorCaption": ""
             }
           ]

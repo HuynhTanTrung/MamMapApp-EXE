@@ -513,6 +513,16 @@
   },
   {
     "ContainingType": "MamMapApp.Controllers.PaymentController",
+    "Method": "CountTotalPayments",
+    "RelativePath": "api/Payment/count",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.PaymentController",
     "Method": "CreatePayment",
     "RelativePath": "api/Payment/create",
     "HttpMethod": "POST",
@@ -545,6 +555,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.PaymentController",
+    "Method": "SearchPayments",
+    "RelativePath": "api/Payment/search",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MamMap.ViewModels.System.Payment.SearchPaymentRequest",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -893,6 +919,22 @@
   },
   {
     "ContainingType": "MamMapApp.Controllers.SnackPlacesController",
+    "Method": "ToggleTemporaryClose",
+    "RelativePath": "api/SnackPlaces/closeToggle",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MamMap.ViewModels.System.SnackPlace.ToggleCloseRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.SnackPlacesController",
     "Method": "CreateSnackPlace",
     "RelativePath": "api/SnackPlaces/create",
     "HttpMethod": "POST",
@@ -902,6 +944,22 @@
       {
         "Name": "dto",
         "Type": "MamMap.ViewModels.System.SnackPlace.CreateSnackPlaceDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.SnackPlacesController",
+    "Method": "DeleteSnackPlace",
+    "RelativePath": "api/SnackPlaces/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MamMap.ViewModels.System.SnackPlace.DeleteSnackPlaceRequest",
         "IsRequired": true
       }
     ],
