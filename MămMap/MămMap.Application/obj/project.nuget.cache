@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "s6/wpiptH2Q=",
+  "dgSpecHash": "GaHjc5VBZVU=",
   "success": true,
   "projectFilePath": "C:\\Users\\Nghe\\source\\repos\\MămMap\\MămMap\\MămMap.Application\\MamMap.Application.csproj",
   "expectedPackageFiles": [
@@ -63,8 +63,7 @@
     "C:\\Users\\Nghe\\.nuget\\packages\\system.security.cryptography.protecteddata\\9.0.4\\system.security.cryptography.protecteddata.9.0.4.nupkg.sha512",
     "C:\\Users\\Nghe\\.nuget\\packages\\system.text.encodings.web\\4.7.2\\system.text.encodings.web.4.7.2.nupkg.sha512",
     "C:\\Users\\Nghe\\.nuget\\packages\\system.text.json\\9.0.5\\system.text.json.9.0.5.nupkg.sha512",
-    "C:\\Users\\Nghe\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\Nghe\\.nuget\\packages\\microsoft.net.sdk.compilers.toolset\\9.0.301\\microsoft.net.sdk.compilers.toolset.9.0.301.nupkg.sha512"
+    "C:\\Users\\Nghe\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
   ],
   "logs": []
 }

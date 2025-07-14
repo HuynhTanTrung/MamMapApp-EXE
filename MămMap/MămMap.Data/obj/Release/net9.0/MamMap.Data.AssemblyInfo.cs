@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MamMap.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+49ba80aad7cacb8f1e20339283b300fd5b13df54")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1f9ccdb6fa4a96c0fc68243eacaae24bdf719ae0")]
 [assembly: System.Reflection.AssemblyProductAttribute("MamMap.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MamMap.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

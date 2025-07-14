@@ -20,6 +20,7 @@ namespace MamMap.Application.System.Gemini
         private readonly List<string> _greetingKeywords = new() { "xin chào", "chào", "hi", "hello", "alo", "ê" };
         private readonly List<string> _searchKeywords = new() { "quán ăn", "quán nào", "ngon", "khu vực", "quận", "gần đây", "ở đâu", "đói", "gợi ý" };
         private readonly List<string> _dishKeywords = new() { "món", "ăn", "thèm", "muốn ăn", "liệt kê", "có gì" };
+        private readonly List<string> _highlyRatedKeywords = new() { "ngon nhất", "đánh giá cao", "tốt nhất", "quán top", "quán đỉnh", "quán hot", "quán rating cao" };
 
         // TAO THÊM VÀO: Keyword để check câu hỏi về phí
         private readonly List<string> _feeKeywords = new() { "phí", "thu phí", "giá", "tiền", "trả phí", "miễn phí", "cost", "fee", "price" };
@@ -52,7 +53,21 @@ namespace MamMap.Application.System.Gemini
                     return (true, "Thành công", $"Măm Map xin chào{greetingName}! Tôi là Măm Map Bot, bạn cần hỗ trợ gì về nền tảng review quán ăn vặt Măm Map ạ?");
                 }
 
-                // TAO THÊM VÀO: Handle questions about fees
+                if (_highlyRatedKeywords.Any(keyword => normalizedPrompt.Contains(keyword)))
+                {
+                    var topRatedPlaces = GetTopRatedSnackPlaces(snackPlaces, reviews, 3); // Lấy 3 quán hàng đầu
+                    if (topRatedPlaces.Any())
+                    {
+                        // Sẽ tạo phương thức này ở bước tiếp theo
+                        var aiResponse = await CallGeminiAPIForTopRated(prompt, userName, topRatedPlaces);
+                        return (true, "Thành công", aiResponse);
+                    }
+                    else
+                    {
+                        return (true, "Thành công", "Xin lỗi, hiện tại Măm Map chưa có đủ dữ liệu đánh giá để gợi ý quán được đánh giá cao nhất. Bạn có thể thử tìm kiếm các quán theo tên hoặc khu vực nhé!");
+                    }
+                }
+
                 if (_feeKeywords.Any(keyword => normalizedPrompt.Contains(keyword)))
                 {
                     var feeResponse = "Chào bạn, Măm Map hoàn toàn **miễn phí** cho người dùng tìm kiếm nhé. " +
@@ -315,6 +330,78 @@ namespace MamMap.Application.System.Gemini
             return botReply;
         }
 
+        // NEW: Method to call Gemini API specifically for top-rated places
+        private async Task<string> CallGeminiAPIForTopRated(string prompt, string? userName, List<(SnackPlaces place, double averageRating)> topRatedPlaces)
+        {
+            var promptInstruction = @"
+    Bạn là Măm Map Bot, một trợ lý ảo chuyên tư vấn quán ăn vặt.
+    Mục tiêu của bạn là giới thiệu các quán ăn vặt được đánh giá cao nhất trên Măm Map một cách thân thiện, tự nhiên và nhiệt tình.
+    Hãy giới thiệu những quán này như một người bạn đang gợi ý địa điểm ăn uống chất lượng.
+    Đừng bịa thêm thông tin quán hay đánh giá không có.
+    Nếu có đánh giá gần nhất, hãy lồng ghép nó vào câu trả lời một cách tự nhiên.
+    ";
+
+            var infoText = new StringBuilder();
+            infoText.AppendLine("Dưới đây là danh sách các quán ăn vặt được đánh giá cao nhất trên Măm Map:");
+            foreach (var item in topRatedPlaces)
+            {
+                infoText.AppendLine($"Tên quán: {item.place.PlaceName}");
+                infoText.AppendLine($"Địa chỉ: {item.place.Address}");
+                infoText.AppendLine($"Đánh giá trung bình: {item.averageRating:F1}/5 sao");
+                if (!string.IsNullOrEmpty(item.place.Description))
+                    infoText.AppendLine($"Mô tả: {item.place.Description}");
+                infoText.AppendLine("---");
+            }
+
+            infoText.Insert(0, promptInstruction + "\n\n");
+
+            var history = new List<object>
+    {
+        new
+        {
+            role = "user",
+            parts = new[] {
+                new {
+                    text = "Bạn là Măm Map Bot, một trợ lý ảo của nền tảng Măm Map. Măm Map là một hệ thống giúp người dùng tìm kiếm và đánh giá các quán ăn vặt. Dựa trên thông tin dưới đây về các quán ăn được đánh giá cao, hãy trả lời một cách thân thiện, tự nhiên và hữu ích như một người từng trải nghiệm quán. Không cần liệt kê máy móc, hãy diễn đạt như một người hiểu rõ về quán. Đừng bịa thêm thông tin không có."
+                }
+            }
+        },
+        new
+        {
+            role = "model",
+            parts = new[] {
+                new { text = "Vâng, tôi đã hiểu. Tôi sẽ trả lời một cách thân thiện dựa trên thông tin quán được đánh giá cao bên dưới và tuyệt đối không bịa thêm thông tin." }
+            }
+        },
+        new
+        {
+            role = "user",
+            parts = new[] {
+                new {
+                    text = $"Câu hỏi của người dùng: {prompt}\nThông tin các quán được đánh giá cao:\n{infoText}"
+                }
+            }
+        }
+    };
+
+            var requestBody = new { contents = history };
+            var content = new StringContent(JsonConvert.SerializeObject(requestBody), Encoding.UTF8, "application/json");
+
+            var res = await _httpClient.PostAsync(ApiUrl, content);
+            res.EnsureSuccessStatusCode();
+
+            var resString = await res.Content.ReadAsStringAsync();
+            dynamic resJson = JsonConvert.DeserializeObject(resString);
+
+            string botReply = resJson?.candidates?[0]?.content?.parts?[0]?.text ?? "Xin lỗi, Măm Map Bot chưa thể trả lời yêu cầu của bạn.";
+
+            if (!string.IsNullOrWhiteSpace(userName) && botReply.Length > 5)
+            {
+                botReply = $"Chào bạn {userName}, {char.ToLower(botReply[0])}{botReply.Substring(1)}";
+            }
+
+            return botReply;
+        }
         private static string ExtractKeywords(string input)
         {
             var words = input.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
@@ -330,6 +417,51 @@ namespace MamMap.Application.System.Gemini
             var normalized = input.Normalize(NormalizationForm.FormD);
             var chars = normalized.Where(c => CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark);
             return new string(chars.ToArray()).Normalize(NormalizationForm.FormC);
+        }
+
+        private List<(SnackPlaces place, double averageRating)> GetTopRatedSnackPlaces(List<SnackPlaces> snackPlaces, List<Reviews> reviews, int count)
+        {
+            var placeRatings = new Dictionary<Guid, List<double>>();
+
+            foreach (var review in reviews.Where(r => r.Status))
+            {
+                var ratings = new List<int>();
+
+                // Directly add the values, as they are non-nullable 'int'
+                // You might add a check if the rating value itself is valid (e.g., > 0)
+                if (review.TasteRating > 0) ratings.Add(review.TasteRating);
+                if (review.PriceRating > 0) ratings.Add(review.PriceRating);
+                if (review.SanitaryRating > 0) ratings.Add(review.SanitaryRating);
+                if (review.TextureRating > 0) ratings.Add(review.TextureRating);
+                if (review.ConvenienceRating > 0) ratings.Add(review.ConvenienceRating);
+
+                if (ratings.Any())
+                {
+                    double reviewAverage = ratings.Average();
+                    if (!placeRatings.ContainsKey(review.SnackPlaceId))
+                    {
+                        placeRatings[review.SnackPlaceId] = new List<double>();
+                    }
+                    placeRatings[review.SnackPlaceId].Add(reviewAverage);
+                }
+            }
+
+            // ... rest of the method remains the same
+            var topRated = placeRatings
+                .Select(pr => new
+                {
+                    SnackPlaceId = pr.Key,
+                    AverageRating = pr.Value.Average()
+                })
+                .OrderByDescending(pr => pr.AverageRating)
+                .Join(snackPlaces,
+                      pr => pr.SnackPlaceId,
+                      sp => sp.SnackPlaceId,
+                      (pr, sp) => (place: sp, averageRating: pr.AverageRating))
+                .Take(count)
+                .ToList();
+
+            return topRated;
         }
     }
 }

@@ -2528,7 +2528,7 @@
       "DeleteSnackPlaceRequest": {
         "type": "object",
         "properties": {
-          "id": {
+          "snackPlaceId": {
             "type": "string",
             "format": "uuid"
           }
