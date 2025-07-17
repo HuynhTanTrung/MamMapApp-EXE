@@ -433,6 +433,64 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "MamMapApp.Controllers.GeminiController",
+    "Method": "CreateNewChatSession",
+    "RelativePath": "api/Gemini/createSession",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "title",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.GeminiController",
+    "Method": "DeleteChatSession",
+    "RelativePath": "api/Gemini/deleteSession",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sessionId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.GeminiController",
+    "Method": "GetAllChatSessions",
+    "RelativePath": "api/Gemini/getAllSessions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.GeminiController",
+    "Method": "GetChatSession",
+    "RelativePath": "api/Gemini/getSessionById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sessionId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MamMapApp.Controllers.MerchantController",
     "Method": "CheckMySnackPlace",
     "RelativePath": "api/merchants/checkCreatedSnackplace",

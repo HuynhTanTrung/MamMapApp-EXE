@@ -25,10 +25,11 @@ namespace MamMap.Data.EF
         public DbSet<PremiumPackage> PremiumPackages { get; set; }
         public DbSet<PackageDescription> PackageDescriptions { get; set; }
         public DbSet<UserPremiumPackage> UserPremiumPackages { get; set; }
+        public DbSet<ChatSession> ChatSessions { get; set; }
+        public DbSet<ChatMessage> ChatMessages { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
 
             modelBuilder.Entity<SnackPlaces>()
                 .HasOne(sp => sp.User)
@@ -167,6 +168,12 @@ namespace MamMap.Data.EF
                     .HasForeignKey(r => r.ParentReplyId)
                     .OnDelete(DeleteBehavior.NoAction);
             });
+
+            modelBuilder.Entity<ChatMessage>()
+                .HasOne(m => m.ChatSession)
+                .WithMany(s => s.Messages)
+                .HasForeignKey(m => m.SessionId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Dishes>().HasKey(d => d.DishId);
             modelBuilder.Entity<SnackPlaces>().HasKey(sp => sp.SnackPlaceId);

@@ -708,6 +708,83 @@
         }
       }
     },
+    "/api/Gemini/createSession": {
+      "post": {
+        "tags": [
+          "Gemini"
+        ],
+        "parameters": [
+          {
+            "name": "title",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Gemini/getAllSessions": {
+      "get": {
+        "tags": [
+          "Gemini"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Gemini/getSessionById": {
+      "get": {
+        "tags": [
+          "Gemini"
+        ],
+        "parameters": [
+          {
+            "name": "sessionId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Gemini/deleteSession": {
+      "delete": {
+        "tags": [
+          "Gemini"
+        ],
+        "parameters": [
+          {
+            "name": "sessionId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/merchants/create": {
       "post": {
         "tags": [
@@ -2228,6 +2305,11 @@
         "properties": {
           "prompt": {
             "type": "string",
+            "nullable": true
+          },
+          "sessionId": {
+            "type": "string",
+            "format": "uuid",
             "nullable": true
           }
         },

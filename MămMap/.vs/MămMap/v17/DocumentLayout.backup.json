@@ -5,6 +5,20 @@
     {
       "AbsoluteMoniker": "D:0:0:{C7D3E864-44A8-44D7-BC62-53F710C75F92}|M\u0103mMap.Application\\MamMap.Application.csproj|c:\\users\\nghe\\source\\repos\\m\u0103mmap\\m\u0103mmap\\m\u0103mmap.application\\system\\gemini\\geminiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C7D3E864-44A8-44D7-BC62-53F710C75F92}|M\u0103mMap.Application\\MamMap.Application.csproj|solutionrelative:m\u0103mmap.application\\system\\gemini\\geminiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7D3E864-44A8-44D7-BC62-53F710C75F92}|M\u0103mMap.Application\\MamMap.Application.csproj|c:\\users\\nghe\\source\\repos\\m\u0103mmap\\m\u0103mmap\\m\u0103mmap.application\\system\\gemini\\igeminiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7D3E864-44A8-44D7-BC62-53F710C75F92}|M\u0103mMap.Application\\MamMap.Application.csproj|solutionrelative:m\u0103mmap.application\\system\\gemini\\igeminiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{216A74DD-1DCF-4388-A377-E9159817BECA}|M\u0103mMap.Data\\MamMap.Data.csproj|c:\\users\\nghe\\source\\repos\\m\u0103mmap\\m\u0103mmap\\m\u0103mmap.data\\ef\\mammapdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{216A74DD-1DCF-4388-A377-E9159817BECA}|M\u0103mMap.Data\\MamMap.Data.csproj|solutionrelative:m\u0103mmap.data\\ef\\mammapdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA5870A7-F07A-4D44-8FA9-F8AB4E6B070A}|..\\M\u0103mMapApp\\MamMapApp.csproj|c:\\users\\nghe\\source\\repos\\m\u0103mmap\\m\u0103mmapapp\\controllers\\geminicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA5870A7-F07A-4D44-8FA9-F8AB4E6B070A}|..\\M\u0103mMapApp\\MamMapApp.csproj|c:\\users\\nghe\\source\\repos\\m\u0103mmap\\m\u0103mmapapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +28,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,15 +72,67 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMapApp\\Program.cs",
+              "RelativeDocumentMoniker": "..\\M\u0103mMapApp\\Program.cs",
+              "ToolTip": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMapApp\\Program.cs",
+              "RelativeToolTip": "..\\M\u0103mMapApp\\Program.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAADEAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-17T08:56:58.53Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MamMapDBContext.cs",
+              "DocumentMoniker": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMap\\M\u0103mMap.Data\\EF\\MamMapDBContext.cs",
+              "RelativeDocumentMoniker": "M\u0103mMap.Data\\EF\\MamMapDBContext.cs",
+              "ToolTip": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMap\\M\u0103mMap.Data\\EF\\MamMapDBContext.cs",
+              "RelativeToolTip": "M\u0103mMap.Data\\EF\\MamMapDBContext.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-17T08:56:47.216Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GeminiController.cs",
+              "DocumentMoniker": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMapApp\\Controllers\\GeminiController.cs",
+              "RelativeDocumentMoniker": "..\\M\u0103mMapApp\\Controllers\\GeminiController.cs",
+              "ToolTip": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMapApp\\Controllers\\GeminiController.cs",
+              "RelativeToolTip": "..\\M\u0103mMapApp\\Controllers\\GeminiController.cs",
+              "ViewState": "AgIAAIwAAAAAAAAAAAAQwKcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T07:48:32.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IGeminiService.cs",
+              "DocumentMoniker": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMap\\M\u0103mMap.Application\\System\\Gemini\\IGeminiService.cs",
+              "RelativeDocumentMoniker": "M\u0103mMap.Application\\System\\Gemini\\IGeminiService.cs",
+              "ToolTip": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMap\\M\u0103mMap.Application\\System\\Gemini\\IGeminiService.cs",
+              "RelativeToolTip": "M\u0103mMap.Application\\System\\Gemini\\IGeminiService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T07:44:51.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "GeminiService.cs",
               "DocumentMoniker": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMap\\M\u0103mMap.Application\\System\\Gemini\\GeminiService.cs",
               "RelativeDocumentMoniker": "M\u0103mMap.Application\\System\\Gemini\\GeminiService.cs",
-              "ToolTip": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMap\\M\u0103mMap.Application\\System\\Gemini\\GeminiService.cs",
-              "RelativeToolTip": "M\u0103mMap.Application\\System\\Gemini\\GeminiService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABjAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Nghe\\source\\repos\\M\u0103mMap\\M\u0103mMap\\M\u0103mMap.Application\\System\\Gemini\\GeminiService.cs*",
+              "RelativeToolTip": "M\u0103mMap.Application\\System\\Gemini\\GeminiService.cs*",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAACEAAABcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-05T11:27:41.157Z",
+              "WhenOpened": "2025-07-16T07:28:10.866Z",
               "EditorCaption": ""
             }
           ]

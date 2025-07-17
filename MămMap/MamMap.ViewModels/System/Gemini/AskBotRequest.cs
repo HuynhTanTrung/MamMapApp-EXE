@@ -9,5 +9,6 @@ namespace MamMap.ViewModels.System.Gemini
     public class AskBotRequest
     {
         public string Prompt { get; set; } = string.Empty;
+        public Guid? SessionId { get; set; }
     }
 }
