@@ -14,6 +14,7 @@ namespace MamMap.Application.System.Gemini
             Guid? sessionId,
             List<SnackPlaces> snackPlaces,
             List<Reviews> reviews,
-            List<Dishes> allDishes);
+            List<Dishes> allDishes,
+            List<SnackPlaceAttributes> attributes);
     }
 }

@@ -3,7 +3,7 @@ using MamMap.Application.System.Gemini;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
-using MamMap.Data.EF; // Assuming MamMapDBContext is in this namespace
+using MamMap.Data.EF;
 using MamMap.ViewModels.System.Gemini;
 using MamMap.Application.System.Chat;
 using System;
@@ -52,6 +52,17 @@ namespace MamMapApp.Controllers
                 .Where(d => d.Status)
                 .ToListAsync();
 
+            var attributes = await _dbContext.SnackPlaceAttributes
+                .Include(a => a.Taste)
+                .Include(a => a.Diet)
+                .Include(a => a.FoodType)
+                .Where(a =>
+                    (a.Taste == null || a.Taste.Status) &&
+                    (a.Diet == null || a.Diet.Status) &&
+                    (a.FoodType == null || a.FoodType.Status))
+                .ToListAsync();
+
+
             var (isSuccess, message, response) = await _geminiService.GetBotResponseAsync(
                 request.Prompt,
                 username,
@@ -59,7 +70,8 @@ namespace MamMapApp.Controllers
                 request.SessionId,
                 snackPlaces,
                 reviews,
-                dishes);
+                dishes,
+                attributes);
 
             return Ok(new
             {
