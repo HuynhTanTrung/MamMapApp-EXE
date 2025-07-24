@@ -1,5 +1,99 @@
 [
   {
+    "ContainingType": "MamMapApp.Controllers.AppRatingController",
+    "Method": "CreateAppReview",
+    "RelativePath": "api/AppRating/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "MamMap.ViewModels.System.AppRating.CreateAppRatingDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.AppRatingController",
+    "Method": "Delete",
+    "RelativePath": "api/AppRating/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.AppRatingController",
+    "Method": "GetById",
+    "RelativePath": "api/AppRating/getById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.AppRatingController",
+    "Method": "GetByUserId",
+    "RelativePath": "api/AppRating/getByUserId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MamMapApp.Controllers.AppRatingController",
+    "Method": "SearchAppRatings",
+    "RelativePath": "api/AppRating/search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "appType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "minStar",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "maxStar",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageNum",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MamMapApp.Controllers.BusinessModelsController",
     "Method": "CreateBusinessModel",
     "RelativePath": "api/BusinessModels/create",

@@ -441,10 +441,20 @@ namespace MamMap.Application.System.SnackPlace
                 ClickedAt = DateTime.UtcNow
             };
 
-            _context.SnackPlaceClicks.Add(click);
-            await _context.SaveChangesAsync();
-
-            return (true, "Click logged successfully.");
+            try
+            {
+                _context.SnackPlaceClicks.Add(click);
+                await _context.SaveChangesAsync();
+                return (true, "Click logged successfully.");
+            }
+            catch (DbUpdateException ex)
+            {
+                return (false, $"DB update error: {ex.InnerException?.Message ?? ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                return (false, $"Unexpected error: {ex.Message}");
+            }
         }
 
         public async Task<object> GetClickStatisticsAsync(Guid userId, DateTime startDate, DateTime endDate)

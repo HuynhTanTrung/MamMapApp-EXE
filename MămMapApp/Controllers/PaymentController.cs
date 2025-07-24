@@ -55,7 +55,7 @@ namespace MamMapApp.Controllers
 
             if (existingPayment != null)
             {
-                var existingQrUrl = $"https://qr.sepay.vn/img?acc=96247THIS1SME0KAY&bank=BIDV&amount={existingPayment.Amount}&des={existingPayment.PaymentCode}";
+                var existingQrUrl = $"https://qr.sepay.vn/img?acc=96247THIS1SME0KAY&bank=BIDV&amount={existingPayment.Amount:0}&des={existingPayment.PaymentCode}";
 
                 return Ok(new
                 {
@@ -75,7 +75,7 @@ namespace MamMapApp.Controllers
                 });
             }
 
-            var paymentCode = $"DH{DateTime.Now:yyyyMMddHHmm}";
+            var paymentCode = $"DH{DateTime.Now:MMddHHmmss}";
 
             var newPayment = new Payments
             {
@@ -91,7 +91,7 @@ namespace MamMapApp.Controllers
             _context.Payment.Add(newPayment);
             await _context.SaveChangesAsync();
 
-            var qrUrl = $"https://qr.sepay.vn/img?acc=96247THIS1SME0KAY&bank=BIDV&amount={newPayment.Amount}&des={newPayment.PaymentCode}";
+            var qrUrl = $"https://qr.sepay.vn/img?acc=96247THIS1SME0KAY&bank=BIDV&amount={newPayment.Amount:0}&des={newPayment.PaymentCode}";
 
             return Ok(new
             {
@@ -114,19 +114,19 @@ namespace MamMapApp.Controllers
         [HttpPost("sepay-webhook")]
         public async Task<IActionResult> SePayWebhook([FromBody] SePayWebhookDTO request)
         {
-            string? paymentCode = null;
+            //string? paymentCode = null;
 
-            if (!string.IsNullOrEmpty(request.content))
-            {
-                paymentCode = request.content.Split(' ').LastOrDefault();
-            }
+            //if (!string.IsNullOrEmpty(request.content))
+            //{
+            //    paymentCode = request.content.Split(' ').LastOrDefault();
+            //}
 
-            if (string.IsNullOrEmpty(paymentCode))
-            {
-                return BadRequest(new { Status = 400, Message = "Payment code not found in webhook content." });
-            }
+            //if (string.IsNullOrEmpty(paymentCode))
+            //{
+            //    return BadRequest(new { Status = 400, Message = "Payment code not found in webhook content." });
+            //}
 
-            var matched = await _paymentService.MarkPaymentAsPaidAsync(paymentCode);
+            var matched = await _paymentService.MarkPaymentAsPaidAsync(request.code);
 
             if (!matched)
             {

@@ -258,8 +258,6 @@ Bạn là Măm Map Bot, một trợ lý ảo chuyên tư vấn quán ăn vặt..
             });
 
             string botReply = await SendGemini(history);
-            if (!string.IsNullOrWhiteSpace(userName) && botReply.Length > 1)
-                botReply = $"Chào bạn {userName}, {char.ToLower(botReply[0])}{botReply.Substring(1)}";
 
             return botReply;
         }
@@ -291,8 +289,6 @@ Bạn là Măm Map Bot, một trợ lý ảo chuyên tư vấn quán ăn vặt..
             });
 
             string botReply = await SendGemini(history);
-            if (!string.IsNullOrWhiteSpace(userName) && botReply.Length > 1)
-                botReply = $"Chào bạn {userName}, {char.ToLower(botReply[0])}{botReply.Substring(1)}";
 
             return botReply;
         }
@@ -321,8 +317,6 @@ Bạn là Măm Map Bot, một trợ lý ảo chuyên tư vấn quán ăn vặt..
             });
 
             string botReply = await SendGemini(history);
-            if (!string.IsNullOrWhiteSpace(userName) && botReply.Length > 1)
-                botReply = $"Chào bạn {userName}, {char.ToLower(botReply[0])}{botReply.Substring(1)}";
 
             return botReply;
         }
@@ -358,8 +352,8 @@ Bạn là Măm Map Bot, một trợ lý ảo chuyên tư vấn quán ăn vặt..
             });
 
             string botReply = await SendGemini(history);
-            if (!string.IsNullOrWhiteSpace(userName) && botReply.Length > 1)
-                botReply = $"Chào bạn {userName}, {char.ToLower(botReply[0])}{botReply.Substring(1)}";
+            //if (!string.IsNullOrWhiteSpace(userName) && botReply.Length > 1)
+            //    botReply = $"Chào bạn {userName}, {char.ToLower(botReply[0])}{botReply.Substring(1)}";
 
             return botReply;
         }

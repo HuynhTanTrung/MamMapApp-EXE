@@ -27,6 +27,7 @@ namespace MamMap.Data.EF
         public DbSet<UserPremiumPackage> UserPremiumPackages { get; set; }
         public DbSet<ChatSession> ChatSessions { get; set; }
         public DbSet<ChatMessage> ChatMessages { get; set; }
+        public DbSet<AppRatings> AppRatings { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -169,6 +170,31 @@ namespace MamMap.Data.EF
                     .OnDelete(DeleteBehavior.NoAction);
             });
 
+            modelBuilder.Entity<AppRatings>(entity =>
+            {
+                entity.ToTable("AppRatings");
+
+                entity.HasKey(x => x.Id);
+
+                entity.Property(x => x.Star)
+                    .IsRequired();
+
+                entity.Property(x => x.CreatedAt)
+                    .HasDefaultValueSql("GETUTCDATE()");
+
+                entity.Property(x => x.Status)
+                    .HasDefaultValue(1);
+
+                entity.HasOne(x => x.User)
+                    .WithMany()
+                    .HasForeignKey(x => x.UserId)
+                    .OnDelete(DeleteBehavior.Cascade);
+            });
+
+            modelBuilder.Entity<SnackPlaceClick>()
+                .HasIndex(c => new { c.UserId, c.SnackPlaceId, c.ClickedDate })
+                .IsUnique();
+
             modelBuilder.Entity<ChatMessage>()
                 .HasOne(m => m.ChatSession)
                 .WithMany(s => s.Messages)
@@ -189,6 +215,7 @@ namespace MamMap.Data.EF
             modelBuilder.Entity<PremiumPackage>().HasKey(p => p.Id);
             modelBuilder.Entity<Replies>().HasKey(p => p.Id);
             modelBuilder.Entity<UserPremiumPackage>().HasKey(x => new { x.UserId, x.PremiumPackageId });
+            modelBuilder.Entity<AppRatings>().HasKey(d => d.Id);
         }
     }
 }

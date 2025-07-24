@@ -1,4 +1,5 @@
 using MamMap.Application.System.BusinessModel;
+using MamMap.Application.System.AppRating;
 using MamMap.Application.System.Chat;
 using MamMap.Application.System.Dashboard;
 using MamMap.Application.System.Diet;
@@ -79,6 +80,7 @@ builder.Services.AddScoped<IReplyService, ReplyService>();
 builder.Services.AddScoped<IDashboardService, DashboardService>();
 builder.Services.AddScoped<IGeminiService, GeminiService>();
 builder.Services.AddScoped<IChatService, ChatService>();
+builder.Services.AddScoped<IAppRatingService, AppRatingService>();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpClient();
 
