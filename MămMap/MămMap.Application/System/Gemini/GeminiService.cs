@@ -16,7 +16,7 @@ namespace MamMap.Application.System.Gemini
         private readonly HttpClient _httpClient;
         private readonly IChatService _chatService;
 
-        private const string ApiKey = "AIzaSyADLXdLtdYq8BdT8GFMDAd2Llc1a7Ef1cw";
+        private const string ApiKey = "AIzaSyC3w0BwCuB0z3uak_5Vi7LthmafykGM1gw";
         private const string ApiUrl =
             $"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={ApiKey}";
 
